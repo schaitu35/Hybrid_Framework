@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="com.hubspot.utils.ExtentListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="com.hubspot.testcases.CompaniesPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyCompaniesTitleTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.hubspot.testcases.CompaniesPageTest -->
       <class name="com.hubspot.testcases.LoginPageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyLoginTest" invocation-numbers="0 1 2"/>
+          <include name="verifyLoginTest" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- com.hubspot.testcases.LoginPageTest -->
+      <class name="com.hubspot.testcases.ContactsPageTest">
+        <methods>
+          <include name="close"/>
+          <include name="setUp"/>
+          <include name="verifyContactTest"/>
+        </methods>
+      </class> <!-- com.hubspot.testcases.ContactsPageTest -->
+      <class name="com.hubspot.testcases.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyLogolTest"/>
+          <include name="verifyEmailTest"/>
+          <include name="verifySignOutTest"/>
+        </methods>
+      </class> <!-- com.hubspot.testcases.HomePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

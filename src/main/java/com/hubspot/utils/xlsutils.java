@@ -14,7 +14,7 @@ public class xlsutils {
 	static Workbook book;
 	static Sheet sheet;
 
-	public static String TestData = "C:\\Users\\schai\\eclipse-workspace\\hubspot\\src\\main\\java\\com\\hubspot\\testdata\\TestData.xlsx";
+	public static String TestData = System.getProperty("user.dir")+"\\src\\main\\java\\com\\hubspot\\testdata\\TestData.xlsx";
 
 	public static Object[][] getData(String sheetname) throws EncryptedDocumentException, IOException {
 

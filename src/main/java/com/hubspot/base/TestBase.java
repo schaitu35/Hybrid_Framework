@@ -37,19 +37,19 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\schai\\eclipse-workspace\\hubspot\\drivers\\chromedriver.exe");
+					"./drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
-					"C:\\Users\\schai\\eclipse-workspace\\hubspot\\drivers\\geckodriver.exe");
+					"./drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("ie")) {
 			System.setProperty("webdriver.ie.driver",
-					"C:\\Users\\schai\\eclipse-workspace\\hubspot\\drivers\\IEDriverServer.exe");
+					"./drivers\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}else if (browserName.equals("edge")) {
 			System.setProperty("webdriver.edge.driver",
-					"C:\\Users\\schai\\eclipse-workspace\\hubspot\\drivers\\msedgedriver.exe");
+					"./drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
 		driver.manage().deleteAllCookies();
@@ -63,7 +63,7 @@ public class TestBase {
 		prop = new Properties();
 		try {
 			InputStream input = new FileInputStream(
-					"C:\\Users\\schai\\eclipse-workspace\\hubspot\\src\\main\\java\\com\\hubspot\\config\\config.properties");
+					System.getProperty("user.dir")+"\\src\\main\\java\\com\\hubspot\\config\\config.properties");
 			prop.load(input);
 
 		} catch (FileNotFoundException e) {
